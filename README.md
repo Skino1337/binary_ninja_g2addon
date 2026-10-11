@@ -14,7 +14,16 @@ and try to restore code with some AI (like Opus 5.5)
 
 1. Run Binary Ninja and open `\System\Gothic2.exe`
 2. In Binary Ninja: File - Run Script
+https://github.com/Skino1337/binary_ninja_g2addon/blob/master/screens/1.png
 3. Run script in order number
 
 
 ## Screens:
+
+https://github.com/Skino1337/binary_ninja_g2addon/blob/master/screens/2.png
+
+https://github.com/Skino1337/binary_ninja_g2addon/blob/master/screens/3.png
+
+https://github.com/Skino1337/binary_ninja_g2addon/blob/master/screens/4.png
+
+https://github.com/Skino1337/binary_ninja_g2addon/blob/master/screens/5.png
