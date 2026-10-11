@@ -12,7 +12,7 @@ and try to restore code with some AI (like Opus 5.5)
 
 ## How to use:
 
-Run Binary Ninja and open `\System\Gothic2.exe`
+Run Binary Ninja and open `\System\Gothic2.exe`\
 In Binary Ninja: File - Run Script
 
 ![](https://github.com/Skino1337/binary_ninja_g2addon/blob/master/screens/1.png)
