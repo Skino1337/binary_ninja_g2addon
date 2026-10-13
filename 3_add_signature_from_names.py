@@ -204,8 +204,12 @@ def parse_function_signature(line_index, original_text, address, signature_strin
         #         return_type = f'{name_splited[0]}*' # constructor
 
     signature_list.append(Function(line=line_index + 1, original_text=original_text, address=address,
-                                   return_type=return_type, name=name, argument_list=arguments, is_static=is_static))
+                                   return_type=return_type, call_conv=conv_call, name=name, argument_list=arguments,
+                                   is_static=is_static))
     # print(f'[{return_type}] [{name}] {arguments}')
+
+    # if 'CGameManager::Run' in signature_list[-1].name:
+    #     print(signature_list[-1])
 
 
 def parse_variable_function_signature(line_index, original_text, address, signature_string):
@@ -370,6 +374,9 @@ def parse_line(i, name_line, address_int, signature_string, is_static):
     close_parentheses_index = signature_string.find(')')
 
     if 'zCMenu::LeaveCallback' in signature_string:
+        pass
+
+    if 'CGameManager::Run' in signature_string:
         pass
 
     if len(conv_call):
@@ -548,8 +555,10 @@ def bn_add_function(signature: Function):
     if not func:
         return
 
-    # if 'ResourceManager' not in signature.name:
+    # if 'CGameManager::Run' not in signature.name:
     #     return
+    #
+    # print(f'signature: {signature}')
 
     if len(signature.name):
         try:
@@ -623,6 +632,7 @@ def bn_add():
             pass
         elif isinstance(s, Variable):
             bn_add_var(s)
+            pass
 
     print('FINISH SCRIPT')
 
