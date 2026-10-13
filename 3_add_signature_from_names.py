@@ -196,12 +196,12 @@ def parse_function_signature(line_index, original_text, address, signature_strin
     name = signature_string[conv_call_index + len(conv_call):open_parentheses_index].strip()
     arguments = get_func_arguments_from_signature(signature_string)
 
-    if len(return_type) <= 1:
+    if len(return_type) < 1:
         return_type = 'void'
-        if len(arguments) == 0:
-            name_splited = name.split('::')
-            if len(name_splited) == 2 and name_splited[0] == name_splited[1]:
-                return_type = f'{name_splited[0]}*' # constructor
+        # if len(arguments) == 0:
+        #     name_splited = name.split('::')
+        #     if len(name_splited) == 2 and name_splited[0] == name_splited[1]:
+        #         return_type = f'{name_splited[0]}*' # constructor
 
     signature_list.append(Function(line=line_index + 1, original_text=original_text, address=address,
                                    return_type=return_type, name=name, argument_list=arguments, is_static=is_static))
